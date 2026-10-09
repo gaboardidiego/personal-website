@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
+import { CareerHistory } from './components/career-history/career-history';
 import { education, experience, focusAreas, interests, portfolio } from './data/portfolio';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.html',
+  imports: [CareerHistory],
 })
 export class App {
   protected readonly portfolio = portfolio;
