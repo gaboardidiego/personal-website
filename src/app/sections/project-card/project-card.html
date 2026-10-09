@@ -1,0 +1,18 @@
+<article class="project-card">
+  <div class="project-card__meta">
+    <span>{{ project().category }}</span>
+    <span>{{ project().year }}</span>
+  </div>
+  <h3>{{ project().title }}</h3>
+  <p class="project-card__description">{{ project().description }}</p>
+  <ul class="project-card__technologies" aria-label="Technologies">
+    @for (technology of project().technologies; track technology) {
+      <li>{{ technology }}</li>
+    }
+  </ul>
+  @if (project().url; as url) {
+    <a class="project-card__link" [href]="url" target="_blank" rel="noreferrer">
+      View project <span aria-hidden="true">↗</span>
+    </a>
+  }
+</article>
