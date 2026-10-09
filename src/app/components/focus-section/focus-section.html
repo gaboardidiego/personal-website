@@ -1,0 +1,17 @@
+<section class="focus section-wrap" id="focus" aria-labelledby="focus-title">
+  <div class="section-heading section-heading--wide">
+    <div>
+      <p class="section-kicker">From computer vision to LLM-powered applications</p>
+      <h2 id="focus-title">What I work on</h2>
+    </div>
+  </div>
+  <ul class="focus__grid">
+    @for (area of focusAreas(); track area.title; let index = $index) {
+      <li class="focus-card">
+        <span class="focus-card__number">0{{ index + 1 }}</span>
+        <h3>{{ area.title }}</h3>
+        <p>{{ area.description }}</p>
+      </li>
+    }
+  </ul>
+</section>
