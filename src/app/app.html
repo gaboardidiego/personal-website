@@ -7,78 +7,52 @@
     </a>
     <nav class="site-nav" aria-label="Primary navigation">
       <a href="#about">About</a>
-      <a href="#journey">Experience</a>
-      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#interests">Interests</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="header-cta" href="#contact">Let's talk</a>
   </header>
 
   <main id="main-content">
-    <section class="hero section-wrap" id="top" aria-labelledby="hero-title">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <img class="hero__backdrop" [src]="portfolio.backdrop" alt="" />
       <div class="hero__copy">
-        <p class="eyebrow">
-          <span class="eyebrow__marker"></span>{{ portfolio.role }}
-          <span aria-hidden="true">/</span> {{ portfolio.location }}
-        </p>
-        <h1 id="hero-title">{{ portfolio.name }}.<span>Building with intention.</span></h1>
-        <p class="hero__summary">
-          I turn ideas into accessible digital experiences, pairing thoughtful interaction with
-          careful implementation.
-        </p>
+        <p class="eyebrow">{{ portfolio.role }}</p>
+        <h1 id="hero-title">{{ portfolio.name }}</h1>
+        <p class="hero__position">{{ portfolio.currentPosition }}</p>
         <div class="hero__actions">
-          <a class="button button--solid" href="#work">Explore selected work</a>
-          <a class="button button--quiet" href="#about">A little about me</a>
+          <a
+            class="button button--quiet"
+            [href]="portfolio.linkedin"
+            target="_blank"
+            rel="noreferrer"
+          >
+            LinkedIn <span aria-hidden="true">↗</span>
+          </a>
         </div>
       </div>
-      <div
-        class="hero-art"
-        role="img"
-        [attr.aria-label]="'A typographic mark for ' + portfolio.name"
-      >
-        <span class="hero-art__topline"
-          >FIELD NOTES <span>01 / {{ currentYear }}</span></span
-        >
-        <span class="hero-art__initials" aria-hidden="true">{{ portfolio.monogram }}</span>
-        <span class="hero-art__sticker">Curious<br />by default.</span>
-        <span class="hero-art__baseline"
-          ><span>DESIGN × CODE</span><span>ALWAYS IN PROGRESS</span></span
-        >
-      </div>
-      <div class="hero__footnotes" aria-label="Working principles">
-        <span><b>01</b> Thoughtful by default</span>
-        <span><b>02</b> Detail has a purpose</span>
-        <span><b>03</b> Always learning</span>
-      </div>
+      <figure class="hero__portrait">
+        <img [src]="portfolio.portrait" [alt]="portfolio.name + ', ' + portfolio.role" />
+      </figure>
     </section>
 
     <section class="about section-wrap" id="about" aria-labelledby="about-title">
       <div class="section-heading">
-        <p class="section-kicker">01 / A LITTLE ABOUT ME</p>
-        <h2 id="about-title">Clear thinking.<br /><em>Careful making.</em></h2>
+        <p class="section-kicker">About me</p>
+        <h2 id="about-title">Augmented reality.<br /><em>Computer vision.</em></h2>
       </div>
       <div class="about__content">
         <p class="about__copy">{{ portfolio.introduction }}</p>
-        <div class="skill-block">
-          <p class="micro-label">A TOOL IN MY KIT</p>
-          <ul class="skill-list" aria-label="Skills">
-            @for (skill of skills; track skill) {
-              <li>{{ skill }}</li>
-            }
-          </ul>
-        </div>
+        <p class="about__education">{{ portfolio.academicBackground }}</p>
       </div>
     </section>
 
-    <section class="journey section-wrap" id="journey" aria-labelledby="journey-title">
+    <section class="journey section-wrap" id="experience" aria-labelledby="journey-title">
       <div class="section-heading section-heading--wide">
         <div>
-          <p class="section-kicker">02 / EXPERIENCE &amp; EDUCATION</p>
-          <h2 id="journey-title">The path so far.</h2>
+          <p class="section-kicker">Experience and education</p>
+          <h2 id="journey-title">Career history</h2>
         </div>
-        <p class="section-heading__note">
-          A few chapters, collaborators, and lessons that shape how I work.
-        </p>
       </div>
       <div class="journey__grid">
         <div class="timeline">
@@ -94,7 +68,7 @@
           }
         </div>
         <aside class="education" aria-labelledby="education-title">
-          <p class="micro-label" id="education-title">EDUCATION</p>
+          <p class="micro-label" id="education-title">Education</p>
           @for (item of education; track item.institution + item.period) {
             <article class="education-item">
               <h3>{{ item.qualification }}</h3>
@@ -106,54 +80,46 @@
       </div>
     </section>
 
-    <section class="work section-wrap" id="work" aria-labelledby="work-title">
-      <div class="section-heading section-heading--wide">
-        <div>
-          <p class="section-kicker">03 / SELECTED WORK</p>
-          <h2 id="work-title">Made with purpose.</h2>
+    <section class="interests" id="interests" aria-labelledby="interests-title">
+      <div class="interests__inner section-wrap">
+        <div class="section-heading section-heading--wide">
+          <div>
+            <p class="section-kicker">Outside work</p>
+            <h2 id="interests-title">Other interests</h2>
+          </div>
         </div>
-        <p class="section-heading__note">
-          A selection of shipped work, open-source contributions, and experiments.
-        </p>
-      </div>
-      <div class="project-filters" role="group" aria-label="Filter projects">
-        @for (filter of projectFilters; track filter) {
-          <button
-            type="button"
-            [class.is-active]="activeProjectFilter() === filter"
-            [attr.aria-pressed]="activeProjectFilter() === filter"
-            [attr.data-filter]="filter"
-            (click)="selectProjectFilter(filter)"
-          >
-            {{ filter }}
-          </button>
-        }
-      </div>
-      <div class="project-grid">
-        @for (project of visibleProjects(); track project.title) {
-          <app-project-card [project]="project" />
-        } @empty {
-          <p class="projects-empty">No projects in this category yet.</p>
-        }
+        <div class="interest-grid">
+          @for (interest of interests; track interest.title) {
+            <article class="interest">
+              <img [src]="interest.image" [alt]="interest.title" loading="lazy" />
+              <div class="interest__copy">
+                <h3>{{ interest.title }}</h3>
+                <p>{{ interest.description }}</p>
+              </div>
+            </article>
+          }
+        </div>
       </div>
     </section>
 
     <section class="contact section-wrap" id="contact" aria-labelledby="contact-title">
       <div>
-        <p class="section-kicker">04 / SAY HELLO</p>
-        <h2 id="contact-title">Have a good one<br /><em>in mind?</em></h2>
+        <p class="section-kicker">Contact</p>
+        <h2 id="contact-title">Get in touch</h2>
       </div>
       <div class="contact__details">
-        <p>For thoughtful projects, kind people, and interesting conversations.</p>
         <a class="contact__email" [href]="'mailto:' + portfolio.email">{{ portfolio.email }}</a>
-        <span class="contact__location">{{ portfolio.location }}</span>
+        <a class="contact__phone" [href]="'tel:' + portfolio.phone">{{ portfolio.phone }}</a>
+        <a class="contact__linkedin" [href]="portfolio.linkedin" target="_blank" rel="noreferrer">
+          LinkedIn <span aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
   </main>
 
   <footer class="site-footer section-wrap">
-    <span>© {{ currentYear }} {{ portfolio.name }}</span>
+    <span>{{ portfolio.name }}</span>
     <a href="#top">Back to top</a>
-    <span>Built with care and Angular.</span>
+    <a [href]="portfolio.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
   </footer>
 </div>

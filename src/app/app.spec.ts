@@ -14,24 +14,28 @@ describe('App', () => {
     expect(app).toBeTruthy();
   });
 
-  it('renders the portfolio introduction and sections', async () => {
+  it("renders Diego's source profile and CV sections", async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Your name');
-    expect(compiled.querySelector('#work')).toBeTruthy();
+    expect(compiled.querySelector('h1')?.textContent).toContain('Diego Gaboardi');
+    expect(compiled.textContent).toContain('Senior Software Engineer at Vuforia, PTC');
+    expect(compiled.textContent).toContain('CV-based collision avoidance system for motorbikes');
+    expect(compiled.querySelector('#work')).toBeFalsy();
+    expect(compiled.querySelector('#experience')).toBeTruthy();
+    expect(compiled.querySelector('#interests')).toBeTruthy();
     expect(compiled.querySelector('#contact')).toBeTruthy();
   });
 
-  it('filters projects by category', async () => {
+  it('uses the supplied profile and interest images', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
 
-    compiled.querySelector<HTMLButtonElement>('[data-filter="Open source"]')?.click();
-    fixture.detectChanges();
-
-    expect(compiled.querySelectorAll('app-project-card')).toHaveLength(1);
-    expect(compiled.querySelector('app-project-card')?.textContent).toContain('Project title');
+    expect(compiled.querySelector('.hero__portrait img')?.getAttribute('src')).toBe(
+      'images/profile.jpg',
+    );
+    expect(compiled.querySelectorAll('.interest img')).toHaveLength(3);
+    expect(compiled.querySelector('.interest img')?.getAttribute('src')).toBe('images/running.jpg');
   });
 });

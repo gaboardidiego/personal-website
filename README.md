@@ -18,19 +18,17 @@ Open <http://localhost:4200/> while the development server is running.
 
 ## Content and structure
 
-- `src/app/data/portfolio.ts` contains the profile, experience, projects,
-  education, and skills shown on the site.
+- `src/app/data/portfolio.ts` contains the profile, experience, education,
+  expertise, and interests shown on the site. Its content is sourced from
+  `website/index.html`.
 - `src/app/models/portfolio.ts` defines the shared content types.
-- `src/app/sections/project-card/` contains the reusable project card and its
-  unit test.
 - `src/app/app.html` defines the page structure, and `src/app/site.css`
   contains its responsive presentation.
-- `public/` contains static files copied into the production build.
+- `public/` and `website/images/` contain static files copied into the
+  production build.
 
-Replace the sample name, email, biography, experience, education, and example
-projects in `src/app/data/portfolio.ts` before publishing. The example
-experience and project entries are starter content, not claims about completed
-work. Update the page title and description in `src/index.html` as well.
+Update the profile content in `src/app/data/portfolio.ts` and metadata in
+`src/index.html` when the source CV changes.
 
 ## Quality checks
 
