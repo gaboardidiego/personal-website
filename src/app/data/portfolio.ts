@@ -13,7 +13,7 @@ export const portfolio = {
   cv: 'cv/diego-gaboardi-cv.pdf',
   contactPrompt: 'Open to conversations about AI products and engineering.',
   introduction:
-    'I build AI-powered products. My AI journey began in computer vision and augmented reality, and more recently has focused on large language models and generative AI. I draw on experience across frontend and backend development, cloud services, and test frameworks.',
+    'I build AI-powered products. My AI journey began in computer vision and augmented reality, and more recently has focused on large language models (LLMs). I bring my experience across frontend and backend development, cloud services, and test frameworks to LLM-powered applications.',
 };
 
 export const experience: Experience[] = [
@@ -24,7 +24,7 @@ export const experience: Experience[] = [
     period: '2025 — Present',
     current: true,
     description:
-      "I contributed significantly to Windchill AI Assistant, PTC's generative AI assistant that helps users find and understand product information through natural-language interactions. I worked on the product from its initial prototypes through release, on both the frontend and the backend.",
+      "I contributed significantly to Windchill AI Assistant, PTC's LLM-powered assistant that helps users find and understand product information through natural-language interactions. I worked on the product from its initial prototypes through release, on both the frontend and the backend.",
   },
   {
     role: 'Senior Software Developer',
@@ -68,19 +68,19 @@ export const experience: Experience[] = [
 
 export const focusAreas: FocusArea[] = [
   {
-    title: 'Generative AI',
+    title: 'LLM applications',
     description:
-      "Windchill AI Assistant, PTC's generative AI assistant that helps users find and understand product information through natural-language interactions, from first prototypes to release.",
+      'Contributing to Windchill AI Assistant at PTC, from first prototypes to release. It lets users find and understand product information in natural language. I worked on both the frontend and the backend.',
   },
   {
     title: 'Computer vision and AR',
     description:
-      'A benchmarking framework that detects regressions and supports the fine-tuning of computer vision algorithms, plus a vision-based collision avoidance system for motorbikes.',
+      "For 5 years I worked on PTC's Vuforia augmented reality SDK. I contributed to the SDK and made a strong contribution to its benchmarking framework, which detects regressions and supports the fine-tuning of the computer vision algorithms.",
   },
   {
-    title: 'Cloud and backend',
+    title: 'Cloud services',
     description:
-      'AWS-hosted WebAPIs that customers rely on to build Augmented Reality applications, and contributions across the CI/CD pipeline.',
+      'Designing, implementing, and maintaining WebAPI services on AWS that customers use to build AR applications. I also have experience with Azure AI features.',
   },
 ];
 
