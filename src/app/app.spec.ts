@@ -24,6 +24,7 @@ describe('App', () => {
     expect(compiled.textContent).toContain('Windchill AI Assistant');
     expect(compiled.textContent).toContain('PTC · Windchill');
     expect(compiled.textContent).toContain('PTC · Vuforia');
+    expect(compiled.textContent).not.toContain('Logos are trademarks of their respective owners.');
     expect(compiled.textContent).toContain('2025 — Present');
     expect(compiled.textContent).toContain('Based in Vienna, Austria · Working for PTC');
     expect(compiled.textContent).toContain('to generative AI');
@@ -45,7 +46,7 @@ describe('App', () => {
     expect(compiled.querySelector('.skill-list')).toBeFalsy();
   });
 
-  it('marks the current role and shows highlights and affiliations', async () => {
+  it('marks the current role and shows logos in career history', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
@@ -53,9 +54,11 @@ describe('App', () => {
     expect(compiled.querySelectorAll('.timeline-item--current')).toHaveLength(1);
     expect(compiled.querySelector('.timeline-item--current')?.textContent).toContain('Windchill');
     expect(compiled.querySelectorAll('.focus-card')).toHaveLength(3);
-    expect(compiled.querySelector('.band__highlight')?.textContent).toContain('2019');
-    expect(compiled.querySelector('.band__statement')?.textContent).toContain('generative AI');
-    expect(compiled.querySelectorAll('.band__logos img')).toHaveLength(5);
+    expect(compiled.querySelector('.about__statement')).toBeFalsy();
+    expect(compiled.querySelector('.about__highlight')).toBeFalsy();
+    expect(compiled.querySelector('.band')).toBeFalsy();
+    expect(compiled.querySelectorAll('.timeline-item .logo-row img')).toHaveLength(7);
+    expect(compiled.querySelectorAll('.education-item__logo')).toHaveLength(3);
   });
 
   it('renders a footer with the year and a prominent email link', async () => {

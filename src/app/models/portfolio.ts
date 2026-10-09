@@ -4,17 +4,14 @@ export interface Experience {
   period: string;
   description: string;
   current?: boolean;
+  logos?: Affiliation[];
 }
 
 export interface Education {
   qualification: string;
   institution: string;
   period: string;
-}
-
-export interface Highlight {
-  value: string;
-  label: string;
+  logo?: Affiliation;
 }
 
 export interface FocusArea {
