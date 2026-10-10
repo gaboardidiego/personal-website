@@ -1,0 +1,21 @@
+<section class="interests" id="interests" aria-labelledby="interests-title">
+  <div class="interests__inner section-wrap">
+    <div class="section-heading section-heading--wide">
+      <div>
+        <p class="section-kicker">Outside work</p>
+        <h2 id="interests-title">Other interests</h2>
+      </div>
+    </div>
+    <div class="interest-grid">
+      @for (interest of interests(); track interest.title) {
+        <article class="interest">
+          <img [src]="interest.image" [alt]="interest.title" loading="lazy" />
+          <div class="interest__copy">
+            <h3>{{ interest.title }}</h3>
+            <p>{{ interest.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+  </div>
+</section>
