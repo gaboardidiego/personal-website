@@ -21,6 +21,7 @@ This is a public, static personal portfolio and CV built with standalone Angular
 - The project requires Node.js 22.22.3+, 24.15.0+, or 26+, and npm.
 - `npm run format` applies Prettier formatting.
 - `npm run verify` runs formatting checks, lint, unit tests, and a production build.
+- `npm run test:coverage` runs unit tests with coverage and writes an HTML report to `coverage/personal-website/index.html`.
 - `npm run publish:pages` builds and stages the static site in `docs/` for manual GitHub Pages publishing.
 
 Run `npm run verify` after making changes. Update or add focused Vitest tests when behavior changes.
