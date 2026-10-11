@@ -7,7 +7,7 @@ into the site.
 
 ## Get started
 
-Requires Node.js 22.22.3 or newer, 24.15.0 or newer, or 26 or newer, and npm.
+Requires Node.js 20.19 or newer and npm.
 
 ```bash
 npm ci
@@ -19,11 +19,12 @@ Open <http://localhost:4200/> while the development server is running.
 ## Content and structure
 
 - `src/app/data/portfolio.ts` contains the profile, experience, education,
-  focus areas, education, and interests shown on the site.
+  expertise, and interests shown on the site. Its content is sourced from
+  `website/index.html`.
 - `src/app/models/portfolio.ts` defines the shared content types.
 - `src/app/app.html` defines the page structure, and `src/app/site.css`
   contains its responsive presentation.
-- `public/` contains the static images, logos, favicon, and CV copied into the
+- `public/` and `website/images/` contain static files copied into the
   production build.
 
 Update the profile content in `src/app/data/portfolio.ts` and metadata in
@@ -37,22 +38,12 @@ Run the project's formatting check, lint, unit tests, and production build with:
 npm run verify
 ```
 
-To run the unit tests with coverage, use:
-
-```bash
-npm run test:coverage
-```
-
-This prints a coverage summary in the terminal and writes an HTML report to
-`coverage/personal-website/index.html`.
-
 To apply formatting instead of checking it, run `npm run format`.
 
 ## GitHub Pages
 
-The Copilot setup workflow installs Node.js and project dependencies for cloud
-agent sessions; it does not deploy the site. To prepare a manual GitHub Pages
-deployment, run:
+This repository intentionally has no GitHub Actions workflows. To prepare a
+manual GitHub Pages deployment, run:
 
 ```bash
 npm run publish:pages

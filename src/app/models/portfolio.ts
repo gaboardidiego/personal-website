@@ -40,6 +40,12 @@ export interface Education {
   period: string;
 }
 
+export interface Award {
+  title: string;
+  description: string;
+  period: string;
+}
+
 export interface Interest {
   title: string;
   description: string;

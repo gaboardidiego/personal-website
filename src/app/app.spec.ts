@@ -29,6 +29,10 @@ describe('App', () => {
     expect(compiled.textContent).toContain('Based in Vienna, Austria · Working for PTC');
     expect(compiled.textContent).toContain('to LLM-powered applications');
     expect(compiled.textContent).toContain('with honors');
+    expect(compiled.textContent).toContain("Le migliori matricole dell'A.A. 2013/2014");
+    expect(compiled.textContent).toContain('Scholarship for the best first-year students.');
+    expect(compiled.textContent).toContain('Lions Club Valle Brembana');
+    expect(compiled.textContent).toContain('2012–2013');
     expect(compiled.textContent).toContain('Monte Rosa');
     expect(compiled.querySelector('.contact__phone')).toBeFalsy();
     expect(compiled.querySelector('.hero a[download]')?.getAttribute('href')).toBe(

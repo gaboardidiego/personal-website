@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import type { Education, Experience } from '../../models/portfolio';
+import type { Award, Education, Experience } from '../../models/portfolio';
 
 @Component({
   selector: 'app-career-history',
@@ -8,4 +8,5 @@ import type { Education, Experience } from '../../models/portfolio';
 export class CareerHistory {
   readonly experience = input.required<Experience[]>();
   readonly education = input.required<Education[]>();
+  readonly awards = input.required<Award[]>();
 }

@@ -447,6 +447,7 @@ app-root {
 
 .timeline-item h3,
 .education-item h3,
+.award-item h3,
 .interest h3 {
   margin: 0;
   font-size: 1.05rem;
@@ -454,7 +455,8 @@ app-root {
 }
 
 .timeline-item__organization,
-.education-item p {
+.education-item p,
+.award-item p {
   margin: 0.35rem 0 0;
   color: var(--forest);
   font-size: 0.92rem;
@@ -486,7 +488,23 @@ app-root {
   border-top: 1px solid #cbd6cf;
 }
 
-.education-item span {
+.awards {
+  margin-top: 0.8rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #cbd6cf;
+}
+
+.awards .micro-label {
+  color: var(--forest);
+}
+
+.award-item {
+  padding-block: 1rem;
+  border-top: 1px solid #cbd6cf;
+}
+
+.education-item span,
+.award-item span {
   display: inline-block;
   margin-top: 0.6rem;
   color: var(--body-muted);

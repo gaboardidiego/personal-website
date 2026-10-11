@@ -1,4 +1,11 @@
-import type { Education, Experience, FocusArea, Interest, Portfolio } from '../models/portfolio';
+import type {
+  Award,
+  Education,
+  Experience,
+  FocusArea,
+  Interest,
+  Portfolio,
+} from '../models/portfolio';
 
 export const portfolio: Portfolio = {
   name: 'Diego Gaboardi',
@@ -111,6 +118,19 @@ export const education: Education[] = [
     qualification: 'Liceo Scientifico (High School)',
     institution: 'Istituto di Istruzione Superiore D. M. Turoldo, Zogno',
     period: '2008 — 2013',
+  },
+];
+
+export const awards: Award[] = [
+  {
+    title: "Le migliori matricole dell'A.A. 2013/2014",
+    description: 'Scholarship for the best first-year students.',
+    period: 'A.A. 2013/2014',
+  },
+  {
+    title: 'Scholarship for best High School Students',
+    description: 'Lions Club Valle Brembana',
+    period: '2012–2013',
   },
 ];
 

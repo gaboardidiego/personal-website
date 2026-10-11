@@ -6,7 +6,7 @@ import { HeroSection } from './components/hero-section/hero-section';
 import { InterestsSection } from './components/interests-section/interests-section';
 import { SiteFooter } from './components/site-footer/site-footer';
 import { SiteHeader } from './components/site-header/site-header';
-import { education, experience, focusAreas, interests, portfolio } from './data/portfolio';
+import { awards, education, experience, focusAreas, interests, portfolio } from './data/portfolio';
 
 @Component({
   selector: 'app-root',
@@ -27,5 +27,6 @@ export class App {
   protected readonly experience = experience;
   protected readonly focusAreas = focusAreas;
   protected readonly education = education;
+  protected readonly awards = awards;
   protected readonly interests = interests;
 }

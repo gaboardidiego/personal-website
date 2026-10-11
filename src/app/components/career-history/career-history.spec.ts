@@ -23,6 +23,13 @@ describe('CareerHistory', () => {
         period: '2016 — 2020',
       },
     ]);
+    fixture.componentRef.setInput('awards', [
+      {
+        title: 'Scholarship for best students',
+        description: 'Example foundation',
+        period: '2020',
+      },
+    ]);
     fixture.detectChanges();
 
     const compiled = fixture.nativeElement as HTMLElement;
@@ -33,6 +40,9 @@ describe('CareerHistory', () => {
     expect(compiled.querySelector('.education-item__logo')).toBeNull();
     expect(compiled.querySelector('.education-item h3')?.textContent).toContain(
       "Bachelor's Degree",
+    );
+    expect(compiled.querySelector('.award-item h3')?.textContent).toContain(
+      'Scholarship for best students',
     );
   });
 });
