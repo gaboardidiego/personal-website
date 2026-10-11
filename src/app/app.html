@@ -8,6 +8,7 @@
       </a>
       <nav class="site-nav" aria-label="Primary navigation">
         <a href="#about">About</a>
+        <a href="#focus">Focus</a>
         <a href="#experience">Experience</a>
         <a href="#interests">Interests</a>
         <a href="#contact">Contact</a>
@@ -24,10 +25,7 @@
         <p class="hero__position">{{ portfolio.currentPosition }}</p>
         <p class="hero__location">{{ portfolio.location }}</p>
         <div class="hero__actions">
-          <a class="button button--primary" [href]="'mailto:' + portfolio.email">Get in touch</a>
-          <a class="button button--quiet" [href]="portfolio.cv" download>
-            Download CV <span aria-hidden="true">↓</span>
-          </a>
+          <a class="button button--solid" [href]="portfolio.cv" download>Download CV</a>
           <a
             class="button button--quiet"
             [href]="portfolio.linkedin"
@@ -46,19 +44,24 @@
     <section class="about section-wrap" id="about" aria-labelledby="about-title">
       <div class="section-heading">
         <p class="section-kicker">About me</p>
-        <h2 id="about-title">From computer vision<br /><em>to generative AI.</em></h2>
+        <h2 id="about-title">Augmented reality.<br /><em>Computer vision.</em></h2>
       </div>
       <div class="about__content">
         <p class="about__copy">{{ portfolio.introduction }}</p>
       </div>
     </section>
 
-    <section class="focus section-wrap" aria-labelledby="focus-title">
-      <p class="section-kicker" id="focus-title">What I work on</p>
+    <section class="focus section-wrap" id="focus" aria-labelledby="focus-title">
+      <div class="section-heading section-heading--wide">
+        <div>
+          <p class="section-kicker">From computer vision to LLM-powered applications</p>
+          <h2 id="focus-title">What I work on</h2>
+        </div>
+      </div>
       <ul class="focus__grid">
-        @for (area of focusAreas; track area.title; let i = $index) {
+        @for (area of focusAreas; track area.title; let index = $index) {
           <li class="focus-card">
-            <span class="focus-card__number" aria-hidden="true">0{{ i + 1 }}</span>
+            <span class="focus-card__number">0{{ index + 1 }}</span>
             <h3>{{ area.title }}</h3>
             <p>{{ area.description }}</p>
           </li>
@@ -78,24 +81,22 @@
           @for (item of experience; track item.organization + item.period) {
             <article class="timeline-item" [class.timeline-item--current]="item.current">
               <div class="timeline-item__meta">
-                <span class="timeline-item__period">{{ item.period }}</span>
-                @if (item.logos) {
-                  <ul class="logo-row">
-                    @for (logo of item.logos; track logo.name) {
-                      <li>
-                        <img [src]="logo.logo" [alt]="logo.name" height="24" loading="lazy" />
-                      </li>
+                <span class="timeline-item__period">
+                  {{ item.period }}
+                  @if (item.current) {
+                    <span class="timeline-item__badge">Current</span>
+                  }
+                </span>
+                @if (item.logos; as logos) {
+                  <div class="logo-row">
+                    @for (affiliation of logos; track affiliation.name) {
+                      <img [src]="affiliation.logo" [alt]="affiliation.name" loading="lazy" />
                     }
-                  </ul>
+                  </div>
                 }
               </div>
               <div>
-                <h3>
-                  {{ item.role }}
-                  @if (item.current) {
-                    <span class="timeline-item__badge">Current role</span>
-                  }
-                </h3>
+                <h3>{{ item.role }}</h3>
                 <p class="timeline-item__organization">{{ item.organization }}</p>
                 <p class="timeline-item__description">{{ item.description }}</p>
               </div>
@@ -106,12 +107,11 @@
           <p class="micro-label" id="education-title">Education</p>
           @for (item of education; track item.institution + item.period) {
             <article class="education-item">
-              @if (item.logo) {
+              @if (item.logo; as logo) {
                 <img
                   class="education-item__logo"
-                  [src]="item.logo.logo"
-                  [alt]="item.logo.name"
-                  height="24"
+                  [src]="logo.logo"
+                  [alt]="logo.name"
                   loading="lazy"
                 />
               }
@@ -154,20 +154,30 @@
       </div>
       <div class="contact__details">
         <a class="contact__email" [href]="'mailto:' + portfolio.email">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1.6 2L12 12.6 19.4 7H4.6ZM4 8.9V17h16V8.9l-8 6-8-6Z"
-            />
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <rect x="3" y="5" width="18" height="14" rx="1" />
+            <path d="m4 7 8 6 8-6" />
           </svg>
           {{ portfolio.email }}
         </a>
         <a class="contact__linkedin" [href]="portfolio.linkedin" target="_blank" rel="noreferrer">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.6h.06c.53-1 1.82-1.95 3.75-1.95 4 0 4.74 2.5 4.74 5.8V21h-4v-5.1c0-1.2-.02-2.8-1.8-2.8-1.8 0-2.07 1.35-2.07 2.7V21h-4V9.75Z"
-            />
+          <svg
+            aria-hidden="true"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.8"
+          >
+            <path d="M7 9v10M7 6.5v.1M11 19v-6a4 4 0 0 1 8 0v6M11 10v9" />
+            <circle cx="7" cy="7" r="1" />
           </svg>
-          LinkedIn <span aria-hidden="true">↗</span>
+          LinkedIn
         </a>
       </div>
     </section>
@@ -175,10 +185,10 @@
 
   <footer class="site-footer section-wrap">
     <span>© {{ year }} {{ portfolio.name }}</span>
-    <span class="site-footer__built">Built with Angular</span>
-    <nav class="site-footer__links" aria-label="Footer">
+    <div class="site-footer__links">
       <a href="#top">Back to top</a>
+      <span>Built with Angular</span>
       <a [href]="portfolio.linkedin" target="_blank" rel="noreferrer">LinkedIn</a>
-    </nav>
+    </div>
   </footer>
 </div>

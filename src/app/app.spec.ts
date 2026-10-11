@@ -27,7 +27,7 @@ describe('App', () => {
     expect(compiled.textContent).not.toContain('Logos are trademarks of their respective owners.');
     expect(compiled.textContent).toContain('2025 — Present');
     expect(compiled.textContent).toContain('Based in Vienna, Austria · Working for PTC');
-    expect(compiled.textContent).toContain('to generative AI');
+    expect(compiled.textContent).toContain('to LLM-powered applications');
     expect(compiled.textContent).toContain('with honors');
     expect(compiled.textContent).toContain('Monte Rosa');
     expect(compiled.querySelector('.contact__phone')).toBeFalsy();

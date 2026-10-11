@@ -230,6 +230,16 @@ app-root {
   background: var(--ink);
 }
 
+.button--solid {
+  color: var(--surface);
+  background: var(--forest);
+}
+
+.button--solid:hover {
+  color: var(--surface);
+  background: var(--ink);
+}
+
 .hero__portrait {
   width: min(100%, 390px);
   aspect-ratio: 0.84;
