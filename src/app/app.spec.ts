@@ -30,6 +30,9 @@ describe('App', () => {
     expect(compiled.textContent).toContain('with honors');
     expect(compiled.textContent).toContain('Monte Rosa');
     expect(compiled.querySelector('.contact__phone')).toBeFalsy();
+    expect(compiled.querySelector('.hero a[download]')?.getAttribute('href')).toBe(
+      'cv/diego-gaboardi-cv.pdf',
+    );
     expect(compiled.textContent).not.toContain('Vuforia, PTC');
     expect(compiled.textContent).toContain('CV-based collision avoidance system for motorbikes');
     expect(compiled.querySelector('#work')).toBeFalsy();
@@ -40,6 +43,34 @@ describe('App', () => {
     expect(compiled.textContent).not.toContain('View experience');
     expect(compiled.textContent).not.toContain('Areas of expertise');
     expect(compiled.querySelector('.skill-list')).toBeFalsy();
+  });
+
+  it('marks the current role and shows highlights and affiliations', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.querySelectorAll('.timeline-item--current')).toHaveLength(1);
+    expect(compiled.querySelector('.timeline-item--current')?.textContent).toContain('Windchill');
+    expect(compiled.querySelectorAll('.focus-card')).toHaveLength(3);
+    expect(compiled.querySelector('.band__highlight')?.textContent).toContain('2019');
+    expect(compiled.querySelector('.band__statement')?.textContent).toContain('generative AI');
+    expect(compiled.querySelectorAll('.band__logos img')).toHaveLength(5);
+  });
+
+  it('renders a footer with the year and a prominent email link', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+
+    expect(compiled.querySelector('.site-footer')?.textContent).toContain(
+      `© ${new Date().getFullYear()} Diego Gaboardi`,
+    );
+    expect(compiled.querySelector('.site-footer')?.textContent).toContain('Built with Angular');
+    expect(compiled.querySelector('.contact__email')?.getAttribute('href')).toBe(
+      'mailto:gaboardidiego@gmail.com',
+    );
+    expect(compiled.querySelectorAll('.contact__details svg')).toHaveLength(2);
   });
 
   it('uses the supplied profile and interest images', async () => {

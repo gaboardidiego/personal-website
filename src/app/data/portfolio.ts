@@ -1,4 +1,11 @@
-import type { Education, Experience, Interest } from '../models/portfolio';
+import type {
+  Affiliation,
+  Education,
+  Experience,
+  FocusArea,
+  Highlight,
+  Interest,
+} from '../models/portfolio';
 
 export const portfolio = {
   name: 'Diego Gaboardi',
@@ -10,6 +17,8 @@ export const portfolio = {
   linkedin: 'https://www.linkedin.com/in/diego-gaboardi',
   portrait: 'images/profile.jpg',
   backdrop: 'images/background.jpg',
+  cv: 'cv/diego-gaboardi-cv.pdf',
+  statement: 'Turning computer vision and generative AI into products people actually use.',
   contactPrompt: 'Open to conversations about AI products and engineering.',
   introduction:
     'I build AI-powered products. My AI journey began in computer vision and augmented reality, and more recently has focused on large language models and generative AI. I draw on experience across frontend and backend development, cloud services, and test frameworks.',
@@ -20,6 +29,7 @@ export const experience: Experience[] = [
     role: 'Senior Software Developer',
     organization: 'PTC · Windchill',
     period: '2025 — Present',
+    current: true,
     description:
       "I contributed significantly to Windchill AI Assistant, PTC's generative AI assistant that helps users find and understand product information through natural-language interactions. I worked on the product from its initial prototypes through release, on both the frontend and the backend.",
   },
@@ -53,6 +63,34 @@ export const experience: Experience[] = [
   },
 ];
 
+export const highlight: Highlight = { value: '2019', label: 'Joined PTC' };
+
+export const focusAreas: FocusArea[] = [
+  {
+    title: 'Generative AI',
+    description:
+      "Windchill AI Assistant, PTC's generative AI assistant that helps users find and understand product information through natural-language interactions, from first prototypes to release.",
+  },
+  {
+    title: 'Computer vision and AR',
+    description:
+      'A benchmarking framework that detects regressions and supports the fine-tuning of computer vision algorithms, plus a vision-based collision avoidance system for motorbikes.',
+  },
+  {
+    title: 'Cloud and backend',
+    description:
+      'AWS-hosted WebAPIs that customers rely on to build Augmented Reality applications, and contributions across the CI/CD pipeline.',
+  },
+];
+
+export const affiliations: Affiliation[] = [
+  { name: 'PTC', logo: 'logos/ptc.svg' },
+  { name: 'Politecnico di Milano', logo: 'logos/polimi.svg' },
+  { name: 'Technical University of Munich', logo: 'logos/tum.svg' },
+  { name: 'BMW', logo: 'logos/bmw.svg' },
+  { name: 'Piaggio', logo: 'logos/piaggio.svg' },
+];
+
 export const education: Education[] = [
   {
     qualification: "Master's Degree in Software Engineering, with honors",
@@ -80,7 +118,7 @@ export const interests: Interest[] = [
   {
     title: 'Running',
     description:
-      'Six marathons completed, with a personal best of 2h 51. I started with trail races and moved on to road races.',
+      'Six marathons completed, with a personal best of 2h\u00a051. I started with trail races and moved on to road races.',
     image: 'images/running.jpg',
   },
   {
