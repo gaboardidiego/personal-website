@@ -37,6 +37,15 @@ Run the project's formatting check, lint, unit tests, and production build with:
 npm run verify
 ```
 
+To run the unit tests with coverage, use:
+
+```bash
+npm run test:coverage
+```
+
+This prints a coverage summary in the terminal and writes an HTML report to
+`coverage/personal-website/index.html`.
+
 To apply formatting instead of checking it, run `npm run format`.
 
 ## GitHub Pages
