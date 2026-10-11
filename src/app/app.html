@@ -20,6 +20,7 @@
         <p class="eyebrow">{{ portfolio.role }}</p>
         <h1 id="hero-title">{{ portfolio.name }}</h1>
         <p class="hero__position">{{ portfolio.currentPosition }}</p>
+        <p class="hero__location">{{ portfolio.location }}</p>
         <div class="hero__actions">
           <a
             class="button button--quiet"
@@ -39,11 +40,10 @@
     <section class="about section-wrap" id="about" aria-labelledby="about-title">
       <div class="section-heading">
         <p class="section-kicker">About me</p>
-        <h2 id="about-title">Augmented reality.<br /><em>Computer vision.</em></h2>
+        <h2 id="about-title">From computer vision<br /><em>to generative AI.</em></h2>
       </div>
       <div class="about__content">
         <p class="about__copy">{{ portfolio.introduction }}</p>
-        <p class="about__education">{{ portfolio.academicBackground }}</p>
       </div>
     </section>
 
@@ -106,10 +106,10 @@
       <div>
         <p class="section-kicker">Contact</p>
         <h2 id="contact-title">Get in touch</h2>
+        <p class="contact__prompt">{{ portfolio.contactPrompt }}</p>
       </div>
       <div class="contact__details">
         <a class="contact__email" [href]="'mailto:' + portfolio.email">{{ portfolio.email }}</a>
-        <a class="contact__phone" [href]="'tel:' + portfolio.phone">{{ portfolio.phone }}</a>
         <a class="contact__linkedin" [href]="portfolio.linkedin" target="_blank" rel="noreferrer">
           LinkedIn <span aria-hidden="true">↗</span>
         </a>

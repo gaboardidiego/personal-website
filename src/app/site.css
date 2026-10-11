@@ -167,11 +167,10 @@ app-root {
 }
 
 .hero__location {
-  max-width: 370px;
-  margin: 0.55rem 0 0;
+  margin: 0.35rem 0 0;
   color: var(--muted);
-  font-size: 0.84rem;
-  line-height: 1.65;
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 .hero__actions {
@@ -200,15 +199,6 @@ app-root {
 
 .button:hover {
   transform: translateY(-2px);
-}
-
-.button--solid {
-  color: var(--surface);
-  background: var(--forest);
-}
-
-.button--solid:hover {
-  background: var(--ink);
 }
 
 .button--quiet {
@@ -272,20 +262,11 @@ app-root {
   font-weight: 500;
 }
 
-.about__copy,
-.about__education {
+.about__copy {
   max-width: 650px;
   margin: 0 0 1.3rem;
-  font-size: 1rem;
-  line-height: 1.85;
-}
-
-.about__copy {
   font-size: 1.12rem;
-}
-
-.about__education {
-  color: var(--muted);
+  line-height: 1.85;
 }
 
 .skill-block {
@@ -440,6 +421,13 @@ app-root {
   color: var(--forest);
 }
 
+.contact__prompt {
+  max-width: 28rem;
+  margin: 1rem 0 0;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 .contact__details {
   display: grid;
   justify-items: start;
@@ -447,7 +435,6 @@ app-root {
 }
 
 .contact__email,
-.contact__phone,
 .contact__linkedin {
   overflow-wrap: anywhere;
   color: var(--ink);
@@ -461,15 +448,6 @@ app-root {
   font-family: 'Newsreader', Georgia, serif;
   font-size: 1.7rem;
   font-weight: 500;
-}
-
-.contact__details address {
-  max-width: 420px;
-  margin-top: 0.25rem;
-  color: var(--muted);
-  font-size: 0.82rem;
-  font-style: normal;
-  line-height: 1.6;
 }
 
 .contact__linkedin {
