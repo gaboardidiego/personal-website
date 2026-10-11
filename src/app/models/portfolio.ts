@@ -16,17 +16,16 @@ export interface Portfolio {
 export interface Experience {
   role: string;
   organization: string;
+  logos?: Logo[];
   period: string;
   description: string;
   current?: boolean;
-  logos?: Affiliation[];
+  skills?: string[];
 }
 
-export interface Education {
-  qualification: string;
-  institution: string;
-  period: string;
-  logo?: Affiliation;
+export interface Logo {
+  name: string;
+  logo: string;
 }
 
 export interface FocusArea {
@@ -34,9 +33,11 @@ export interface FocusArea {
   description: string;
 }
 
-export interface Affiliation {
-  name: string;
-  logo: string;
+export interface Education {
+  qualification: string;
+  institution: string;
+  logo?: Logo;
+  period: string;
 }
 
 export interface Interest {

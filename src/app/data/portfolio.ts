@@ -25,6 +25,7 @@ export const experience: Experience[] = [
     current: true,
     description:
       "I contributed significantly to Windchill AI Assistant, PTC's LLM-powered assistant that helps users find and understand product information through natural-language interactions. I worked on the product from its initial prototypes through release, on both the frontend and the backend.",
+    skills: ['Java', 'Windchill'],
   },
   {
     role: 'Senior Software Developer',
@@ -33,6 +34,7 @@ export const experience: Experience[] = [
     period: '2023 — 2025',
     description:
       'I developed the AWS-hosted WebAPIs that our customers rely on to create Augmented Reality applications. Alongside the benchmarking framework, I contributed to several areas of our CI/CD pipeline.',
+    skills: ['AWS', 'Azure'],
   },
   {
     role: 'Software Developer',
@@ -41,6 +43,7 @@ export const experience: Experience[] = [
     period: '2019 — 2023',
     description:
       'My primary responsibility was to expand a benchmarking test framework, which detects regressions and supports the fine-tuning of the computer vision algorithms developed by our team. The role required extensive Python knowledge and solid software engineering practices to keep the code readable and extensible.',
+    skills: ['Python', 'C++', 'Vuforia'],
   },
   {
     role: 'CV-based collision avoidance system for motorbikes',
@@ -52,6 +55,7 @@ export const experience: Experience[] = [
     period: '2018',
     description:
       'Design and implementation of a CV-based collision avoidance system for motorbikes. The most innovative contribution was the adaptation of the car-oriented algorithms on motorbikes and a novel approach to identifying stop-light regions and determining their status.',
+    skills: ['Python', 'C++', 'OpenCV'],
   },
   {
     role: 'Mobility services project',

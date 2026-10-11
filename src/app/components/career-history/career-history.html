@@ -28,6 +28,13 @@
             <h3>{{ item.role }}</h3>
             <p class="timeline-item__organization">{{ item.organization }}</p>
             <p class="timeline-item__description">{{ item.description }}</p>
+            @if (item.skills; as skills) {
+              <ul class="skill-list timeline-item__skills" aria-label="Skills used">
+                @for (skill of skills; track skill) {
+                  <li>{{ skill }}</li>
+                }
+              </ul>
+            }
           </div>
         </article>
       }

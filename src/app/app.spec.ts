@@ -43,7 +43,25 @@ describe('App', () => {
     expect(compiled.textContent).not.toContain('Hohlweggase');
     expect(compiled.textContent).not.toContain('View experience');
     expect(compiled.textContent).not.toContain('Areas of expertise');
-    expect(compiled.querySelector('.skill-list')).toBeFalsy();
+  });
+
+  it('renders skills for the Windchill, Vuforia, and Politecnico roles', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const skillsFor = (period: string) => {
+      const item = Array.from(compiled.querySelectorAll('.timeline-item')).find((entry) =>
+        entry.querySelector('.timeline-item__period')?.textContent?.includes(period),
+      );
+      return Array.from(item?.querySelectorAll('.timeline-item__skills li') ?? [], (skill) =>
+        skill.textContent?.trim(),
+      );
+    };
+
+    expect(skillsFor('2025 — Present')).toEqual(['Java', 'Windchill']);
+    expect(skillsFor('2023 — 2025')).toEqual(['AWS', 'Azure']);
+    expect(skillsFor('2019 — 2023')).toEqual(['Python', 'C++', 'Vuforia']);
+    expect(skillsFor('2018')).toEqual(['Python', 'C++', 'OpenCV']);
   });
 
   it('marks the current role and shows logos in career history', async () => {
@@ -78,9 +96,13 @@ describe('App', () => {
       'gaboardidiego@gmail.com',
     );
     expect(compiled.querySelectorAll('.contact__details svg')).toHaveLength(2);
+    expect(compiled.querySelector('.site-footer__linkedin')?.getAttribute('href')).toBe(
+      'https://www.linkedin.com/in/diego-gaboardi',
+    );
+    expect(compiled.querySelector('.site-footer__linkedin svg')).toBeTruthy();
   });
 
-  it('shows email and LinkedIn actions with icons in the hero', async () => {
+  it('uses quiet icon-led email and LinkedIn actions in the hero and contact section', async () => {
     const fixture = TestBed.createComponent(App);
     await fixture.whenStable();
     const compiled = fixture.nativeElement as HTMLElement;
@@ -89,13 +111,17 @@ describe('App', () => {
     expect(hero?.querySelector('a[href="mailto:gaboardidiego@gmail.com"]')?.textContent).toContain(
       'Email',
     );
-    expect(
-      hero?.querySelector('a[href="https://www.linkedin.com/in/diego-gaboardi"] svg'),
-    ).toBeTruthy();
-    expect(hero?.querySelector('a[href="mailto:gaboardidiego@gmail.com"] svg')).toBeTruthy();
-    expect(compiled.querySelector('.contact__email')?.classList.contains('button--quiet')).toBe(
-      true,
-    );
+    for (const selector of [
+      '.hero__actions a[href="https://www.linkedin.com/in/diego-gaboardi"]',
+      '.hero__actions a[href="mailto:gaboardidiego@gmail.com"]',
+      '.contact__details a[href="https://www.linkedin.com/in/diego-gaboardi"]',
+      '.contact__details a[href="mailto:gaboardidiego@gmail.com"]',
+    ]) {
+      const action = compiled.querySelector(selector);
+      expect(action?.classList.contains('button')).toBe(true);
+      expect(action?.classList.contains('button--quiet')).toBe(true);
+      expect(action?.querySelector('svg')).toBeTruthy();
+    }
   });
 
   it('uses the supplied profile and interest images', async () => {
