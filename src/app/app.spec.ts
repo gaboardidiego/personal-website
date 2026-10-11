@@ -73,7 +73,29 @@ describe('App', () => {
     expect(compiled.querySelector('.contact__email')?.getAttribute('href')).toBe(
       'mailto:gaboardidiego@gmail.com',
     );
+    expect(compiled.querySelector('.contact__email')?.textContent).toContain('Email');
+    expect(compiled.querySelector('.contact__email')?.textContent).not.toContain(
+      'gaboardidiego@gmail.com',
+    );
     expect(compiled.querySelectorAll('.contact__details svg')).toHaveLength(2);
+  });
+
+  it('shows email and LinkedIn actions with icons in the hero', async () => {
+    const fixture = TestBed.createComponent(App);
+    await fixture.whenStable();
+    const compiled = fixture.nativeElement as HTMLElement;
+    const hero = compiled.querySelector('.hero__actions');
+
+    expect(hero?.querySelector('a[href="mailto:gaboardidiego@gmail.com"]')?.textContent).toContain(
+      'Email',
+    );
+    expect(
+      hero?.querySelector('a[href="https://www.linkedin.com/in/diego-gaboardi"] svg'),
+    ).toBeTruthy();
+    expect(hero?.querySelector('a[href="mailto:gaboardidiego@gmail.com"] svg')).toBeTruthy();
+    expect(compiled.querySelector('.contact__email')?.classList.contains('button--quiet')).toBe(
+      true,
+    );
   });
 
   it('uses the supplied profile and interest images', async () => {
