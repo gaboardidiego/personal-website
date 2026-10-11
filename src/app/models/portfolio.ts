@@ -19,6 +19,7 @@ export interface Experience {
   logos?: Logo[];
   period: string;
   description: string;
+  highlights?: string[];
   current?: boolean;
   skills?: string[];
 }

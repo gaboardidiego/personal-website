@@ -472,6 +472,19 @@ app-root {
   line-height: 1.75;
 }
 
+.timeline-item__highlights {
+  max-width: 640px;
+  margin: 0.75rem 0 0;
+  padding-left: 1.25rem;
+  color: var(--body-muted);
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.timeline-item__highlights li + li {
+  margin-top: 0.35rem;
+}
+
 .education {
   position: sticky;
   top: 7rem;

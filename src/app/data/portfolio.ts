@@ -39,8 +39,14 @@ export const experience: Experience[] = [
     organization: 'PTC · Vuforia',
     logos: [{ name: 'Vuforia', logo: 'logos/vuforia.webp' }],
     period: '2023 — 2025',
-    description:
-      'I developed the AWS-hosted WebAPIs that our customers rely on to create Augmented Reality applications. Alongside the benchmarking framework, I contributed to several areas of our CI/CD pipeline.',
+    description: 'I joined the cloud services team of Vuforia Engine.',
+    highlights: [
+      'Developed the AWS-hosted WebAPIs that our customers rely on to create Augmented Reality applications.',
+      'Extended three RESTful APIs written in Python (FastAPI), TypeScript (NestJS), and Scala.',
+      'Improved the AWS infrastructure and the tooling to maintain and deploy the APIs smoothly (Prometheus, Grafana, PagerDuty, Argo, FluxCD, Helm).',
+      'Ported the CI from TeamCity to GitHub Actions and contributed to several other areas of our CI/CD pipeline.',
+      'Continued to contribute to the benchmarking framework.',
+    ],
     skills: ['AWS', 'Azure', 'Kubernetes'],
   },
   {
@@ -49,7 +55,14 @@ export const experience: Experience[] = [
     logos: [{ name: 'Vuforia', logo: 'logos/vuforia.webp' }],
     period: '2019 — 2023',
     description:
-      'My primary responsibility was to expand a benchmarking test framework, which detects regressions and supports the fine-tuning of the computer vision algorithms developed by our team. The role required extensive Python knowledge and solid software engineering practices to keep the code readable and extensible.',
+      'I worked in the research and development team of Vuforia Engine, developing the AR SDK.',
+    highlights: [
+      'Design and implementation of several components of the benchmarking test framework written in Python.',
+      'Extensions of the Vuforia SDK written in C++.',
+      'Migration of the benchmarking tests to Azure.',
+      'Improvement to the pipelines for automatic ground-truth generation.',
+      'Extensive Python work and solid software engineering practices to keep the code readable and extensible.',
+    ],
     skills: ['Python', 'C++', 'Vuforia'],
   },
   {
