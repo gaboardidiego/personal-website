@@ -1,11 +1,4 @@
-import type {
-  Affiliation,
-  Education,
-  Experience,
-  FocusArea,
-  Highlight,
-  Interest,
-} from '../models/portfolio';
+import type { Education, Experience, FocusArea, Interest } from '../models/portfolio';
 
 export const portfolio = {
   name: 'Diego Gaboardi',
@@ -18,7 +11,6 @@ export const portfolio = {
   portrait: 'images/profile.jpg',
   backdrop: 'images/background.jpg',
   cv: 'cv/diego-gaboardi-cv.pdf',
-  statement: 'Turning computer vision and generative AI into products people actually use.',
   contactPrompt: 'Open to conversations about AI products and engineering.',
   introduction:
     'I build AI-powered products. My AI journey began in computer vision and augmented reality, and more recently has focused on large language models and generative AI. I draw on experience across frontend and backend development, cloud services, and test frameworks.',
@@ -28,6 +20,7 @@ export const experience: Experience[] = [
   {
     role: 'Senior Software Developer',
     organization: 'PTC · Windchill',
+    logos: [{ name: 'PTC', logo: 'logos/ptc.svg' }],
     period: '2025 — Present',
     current: true,
     description:
@@ -36,6 +29,7 @@ export const experience: Experience[] = [
   {
     role: 'Senior Software Developer',
     organization: 'PTC · Vuforia',
+    logos: [{ name: 'Vuforia', logo: 'logos/vuforia.webp' }],
     period: '2023 — 2025',
     description:
       'I developed the AWS-hosted WebAPIs that our customers rely on to create Augmented Reality applications. Alongside the benchmarking framework, I contributed to several areas of our CI/CD pipeline.',
@@ -43,6 +37,7 @@ export const experience: Experience[] = [
   {
     role: 'Software Developer',
     organization: 'PTC · Vuforia',
+    logos: [{ name: 'Vuforia', logo: 'logos/vuforia.webp' }],
     period: '2019 — 2023',
     description:
       'My primary responsibility was to expand a benchmarking test framework, which detects regressions and supports the fine-tuning of the computer vision algorithms developed by our team. The role required extensive Python knowledge and solid software engineering practices to keep the code readable and extensible.',
@@ -50,6 +45,10 @@ export const experience: Experience[] = [
   {
     role: 'CV-based collision avoidance system for motorbikes',
     organization: 'Politecnico di Milano and Piaggio',
+    logos: [
+      { name: 'Politecnico di Milano', logo: 'logos/polimi.svg' },
+      { name: 'Piaggio', logo: 'logos/piaggio.svg' },
+    ],
     period: '2018',
     description:
       'Design and implementation of a CV-based collision avoidance system for motorbikes. The most innovative contribution was the adaptation of the car-oriented algorithms on motorbikes and a novel approach to identifying stop-light regions and determining their status.',
@@ -57,13 +56,15 @@ export const experience: Experience[] = [
   {
     role: 'Mobility services project',
     organization: 'Technical University of Munich and BMW',
+    logos: [
+      { name: 'Technical University of Munich', logo: 'logos/tum.svg' },
+      { name: 'BMW', logo: 'logos/bmw.svg' },
+    ],
     period: '2017',
     description:
       'Design and implementation of FleetMe, a tool that optimizes management of corporate fleets by using car data.',
   },
 ];
-
-export const highlight: Highlight = { value: '2019', label: 'Joined PTC' };
 
 export const focusAreas: FocusArea[] = [
   {
@@ -83,28 +84,23 @@ export const focusAreas: FocusArea[] = [
   },
 ];
 
-export const affiliations: Affiliation[] = [
-  { name: 'PTC', logo: 'logos/ptc.svg' },
-  { name: 'Politecnico di Milano', logo: 'logos/polimi.svg' },
-  { name: 'Technical University of Munich', logo: 'logos/tum.svg' },
-  { name: 'BMW', logo: 'logos/bmw.svg' },
-  { name: 'Piaggio', logo: 'logos/piaggio.svg' },
-];
-
 export const education: Education[] = [
   {
     qualification: "Master's Degree in Software Engineering, with honors",
     institution: 'Politecnico di Milano',
+    logo: { name: 'Politecnico di Milano', logo: 'logos/polimi.svg' },
     period: '2016 — 2018',
   },
   {
     qualification: 'Semester abroad',
     institution: 'Technical University of Munich',
+    logo: { name: 'Technical University of Munich', logo: 'logos/tum.svg' },
     period: '2017 — 2018',
   },
   {
     qualification: "Bachelor's Degree in Software Engineering",
     institution: 'Politecnico di Milano',
+    logo: { name: 'Politecnico di Milano', logo: 'logos/polimi.svg' },
     period: '2013 — 2016',
   },
   {

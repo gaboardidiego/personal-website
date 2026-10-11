@@ -336,6 +336,37 @@ app-root {
   border-top: 1px solid var(--line);
 }
 
+.timeline-item__meta {
+  display: grid;
+  align-content: start;
+  gap: 0.85rem;
+}
+
+.logo-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.logo-row img,
+.education-item__logo {
+  display: block;
+  width: auto;
+  height: 24px;
+  max-width: 100%;
+  object-fit: contain;
+  opacity: 0.8;
+  filter: grayscale(1);
+}
+
+.education-item__logo {
+  margin-bottom: 0.7rem;
+}
+
 .timeline-item__period {
   color: var(--body-muted);
   font-size: 0.75rem;
@@ -503,90 +534,6 @@ app-root {
   margin: 0.8rem 0 0;
   color: var(--body-muted);
   line-height: 1.7;
-}
-
-.band {
-  color: var(--surface);
-  background: var(--forest);
-}
-
-.band__inner {
-  padding-block: 4.5rem;
-}
-
-.band__lead {
-  display: grid;
-  grid-template-columns: minmax(0, 1.6fr) auto;
-  align-items: end;
-  gap: 3rem;
-}
-
-.band__statement {
-  max-width: 780px;
-  margin: 0;
-  font-family: 'Newsreader', Georgia, serif;
-  font-size: 2.6rem;
-  font-weight: 500;
-  line-height: 1.15;
-}
-
-.band__highlight {
-  display: grid;
-  gap: 0.5rem;
-  margin: 0;
-  padding-left: 1.2rem;
-  border-left: 2px solid var(--lime);
-}
-
-.band__highlight strong {
-  font-family: 'Newsreader', Georgia, serif;
-  font-size: 3.2rem;
-  font-weight: 500;
-  line-height: 1;
-}
-
-.band__highlight span {
-  color: rgb(255 255 255 / 84%);
-  font-size: 0.92rem;
-}
-
-.band__label {
-  margin: 3.5rem 0 1.2rem;
-  color: rgb(255 255 255 / 84%);
-  font-family: 'DM Mono', monospace;
-  font-size: 0.68rem;
-  text-transform: uppercase;
-}
-
-.band__logos {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: 1rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.band__logos li {
-  display: grid;
-  height: 88px;
-  place-items: center;
-  padding: 1rem;
-  background: var(--surface);
-}
-
-.band__logos img {
-  display: block;
-  width: auto;
-  height: 40px;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-.band__note {
-  margin: 1.25rem 0 0;
-  color: rgb(255 255 255 / 70%);
-  font-size: 0.72rem;
 }
 
 .contact {
@@ -793,39 +740,6 @@ app-root {
 
   .focus__grid {
     grid-template-columns: 1fr;
-  }
-
-  .band__inner {
-    padding-block: 3rem;
-  }
-
-  .band__lead {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
-
-  .band__statement {
-    font-size: 1.9rem;
-  }
-
-  .band__highlight strong {
-    font-size: 2.4rem;
-  }
-
-  .band__label {
-    margin-top: 2.5rem;
-  }
-
-  .band__logos {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .band__logos li:last-child {
-    grid-column: 1 / -1;
-  }
-
-  .band__logos li {
-    height: 72px;
   }
 
   .education {

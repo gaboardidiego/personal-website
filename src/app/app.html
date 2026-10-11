@@ -66,25 +66,6 @@
       </ul>
     </section>
 
-    <section class="band" aria-label="Statement and affiliations">
-      <div class="band__inner section-wrap">
-        <div class="band__lead">
-          <p class="band__statement">{{ portfolio.statement }}</p>
-          <p class="band__highlight">
-            <strong>{{ highlight.value }}</strong>
-            <span>{{ highlight.label }}</span>
-          </p>
-        </div>
-        <p class="band__label" id="affiliations-title">Worked and studied with</p>
-        <ul class="band__logos" aria-labelledby="affiliations-title">
-          @for (item of affiliations; track item.name) {
-            <li><img [src]="item.logo" [alt]="item.name" height="40" loading="lazy" /></li>
-          }
-        </ul>
-        <p class="band__note">Logos are trademarks of their respective owners.</p>
-      </div>
-    </section>
-
     <section class="journey section-wrap" id="experience" aria-labelledby="journey-title">
       <div class="section-heading section-heading--wide">
         <div>
@@ -96,7 +77,18 @@
         <div class="timeline">
           @for (item of experience; track item.organization + item.period) {
             <article class="timeline-item" [class.timeline-item--current]="item.current">
-              <span class="timeline-item__period">{{ item.period }}</span>
+              <div class="timeline-item__meta">
+                <span class="timeline-item__period">{{ item.period }}</span>
+                @if (item.logos) {
+                  <ul class="logo-row">
+                    @for (logo of item.logos; track logo.name) {
+                      <li>
+                        <img [src]="logo.logo" [alt]="logo.name" height="24" loading="lazy" />
+                      </li>
+                    }
+                  </ul>
+                }
+              </div>
               <div>
                 <h3>
                   {{ item.role }}
@@ -114,6 +106,15 @@
           <p class="micro-label" id="education-title">Education</p>
           @for (item of education; track item.institution + item.period) {
             <article class="education-item">
+              @if (item.logo) {
+                <img
+                  class="education-item__logo"
+                  [src]="item.logo.logo"
+                  [alt]="item.logo.name"
+                  height="24"
+                  loading="lazy"
+                />
+              }
               <h3>{{ item.qualification }}</h3>
               <p>{{ item.institution }}</p>
               <span>{{ item.period }}</span>
