@@ -1,0 +1,49 @@
+<section class="journey section-wrap" id="experience" aria-labelledby="journey-title">
+  <div class="section-heading section-heading--wide">
+    <div>
+      <p class="section-kicker">Experience and education</p>
+      <h2 id="journey-title">Career history</h2>
+    </div>
+  </div>
+  <div class="journey__grid">
+    <div class="timeline">
+      @for (item of experience(); track item.organization + item.period) {
+        <article class="timeline-item" [class.timeline-item--current]="item.current">
+          <div class="timeline-item__meta">
+            <span class="timeline-item__period">
+              {{ item.period }}
+              @if (item.current) {
+                <span class="timeline-item__badge">Current</span>
+              }
+            </span>
+            @if (item.logos; as logos) {
+              <div class="logo-row">
+                @for (affiliation of logos; track affiliation.name) {
+                  <img [src]="affiliation.logo" [alt]="affiliation.name" loading="lazy" />
+                }
+              </div>
+            }
+          </div>
+          <div>
+            <h3>{{ item.role }}</h3>
+            <p class="timeline-item__organization">{{ item.organization }}</p>
+            <p class="timeline-item__description">{{ item.description }}</p>
+          </div>
+        </article>
+      }
+    </div>
+    <aside class="education" aria-labelledby="education-title">
+      <p class="micro-label" id="education-title">Education</p>
+      @for (item of education(); track item.institution + item.period) {
+        <article class="education-item">
+          @if (item.logo; as logo) {
+            <img class="education-item__logo" [src]="logo.logo" [alt]="logo.name" loading="lazy" />
+          }
+          <h3>{{ item.qualification }}</h3>
+          <p>{{ item.institution }}</p>
+          <span>{{ item.period }}</span>
+        </article>
+      }
+    </aside>
+  </div>
+</section>

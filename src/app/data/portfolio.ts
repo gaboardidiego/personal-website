@@ -1,6 +1,6 @@
-import type { Education, Experience, FocusArea, Interest } from '../models/portfolio';
+import type { Education, Experience, FocusArea, Interest, Portfolio } from '../models/portfolio';
 
-export const portfolio = {
+export const portfolio: Portfolio = {
   name: 'Diego Gaboardi',
   monogram: 'DG',
   role: 'Software Developer',

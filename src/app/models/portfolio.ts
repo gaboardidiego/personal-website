@@ -1,3 +1,18 @@
+export interface Portfolio {
+  name: string;
+  monogram: string;
+  role: string;
+  currentPosition: string;
+  location: string;
+  email: string;
+  linkedin: string;
+  portrait: string;
+  backdrop: string;
+  cv: string;
+  contactPrompt: string;
+  introduction: string;
+}
+
 export interface Experience {
   role: string;
   organization: string;
