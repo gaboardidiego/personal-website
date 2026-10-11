@@ -25,7 +25,7 @@ export const experience: Experience[] = [
     current: true,
     description:
       "I contributed significantly to Windchill AI Assistant, PTC's LLM-powered assistant that helps users find and understand product information through natural-language interactions. I worked on the product from its initial prototypes through release, on both the frontend and the backend.",
-    skills: ['Java', 'Windchill'],
+    skills: ['Java', 'Windchill', 'OpenAI', 'Azure AI Services'],
   },
   {
     role: 'Senior Software Developer',
@@ -34,7 +34,7 @@ export const experience: Experience[] = [
     period: '2023 — 2025',
     description:
       'I developed the AWS-hosted WebAPIs that our customers rely on to create Augmented Reality applications. Alongside the benchmarking framework, I contributed to several areas of our CI/CD pipeline.',
-    skills: ['AWS', 'Azure'],
+    skills: ['AWS', 'Azure', 'Kubernetes'],
   },
   {
     role: 'Software Developer',
@@ -74,7 +74,7 @@ export const focusAreas: FocusArea[] = [
   {
     title: 'LLM applications',
     description:
-      'Contributing to Windchill AI Assistant at PTC, from first prototypes to release. It lets users find and understand product information in natural language. I worked on both the frontend and the backend.',
+      'I contributed to Windchill AI Assistant at PTC, from the first prototypes to release. It lets users find and understand product information in natural language. Among other things, I implemented the automatic creation and update of the vector index the LLM relies on to search that information.',
   },
   {
     title: 'Computer vision and AR',
@@ -84,7 +84,7 @@ export const focusAreas: FocusArea[] = [
   {
     title: 'Cloud services',
     description:
-      'Designing, implementing, and maintaining WebAPI services on AWS that customers use to build AR applications. I also have experience with Azure AI features.',
+      'Designing, implementing, and maintaining WebAPI services on AWS that customers use to build AR applications. I also have hands-on experience with Azure, including its AI features.',
   },
 ];
 
@@ -118,7 +118,7 @@ export const interests: Interest[] = [
   {
     title: 'Running',
     description:
-      'Six marathons completed, with a personal best of 2h\u00a051. I started with trail races and moved on to road races.',
+      'Seven marathons completed, with a personal best of 2h\u00a051. I started with trail races and moved on to road races.',
     image: 'images/running.jpg',
   },
   {
@@ -128,7 +128,7 @@ export const interests: Interest[] = [
   },
   {
     title: 'Mountains',
-    description: 'Hiking, easy climbing, and skiing. This photo was taken on Monte Rosa.',
+    description: 'Hiking, climbing, and skiing. This photo was taken on Monte Rosa.',
     image: 'images/mountains.jpg',
   },
 ];

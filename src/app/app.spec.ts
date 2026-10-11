@@ -58,8 +58,13 @@ describe('App', () => {
       );
     };
 
-    expect(skillsFor('2025 — Present')).toEqual(['Java', 'Windchill']);
-    expect(skillsFor('2023 — 2025')).toEqual(['AWS', 'Azure']);
+    expect(skillsFor('2025 — Present')).toEqual([
+      'Java',
+      'Windchill',
+      'OpenAI',
+      'Azure AI Services',
+    ]);
+    expect(skillsFor('2023 — 2025')).toEqual(['AWS', 'Azure', 'Kubernetes']);
     expect(skillsFor('2019 — 2023')).toEqual(['Python', 'C++', 'Vuforia']);
     expect(skillsFor('2018')).toEqual(['Python', 'C++', 'OpenCV']);
   });
