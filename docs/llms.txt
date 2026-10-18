@@ -1,0 +1,23 @@
+# Diego Gaboardi
+
+> Senior Software Developer at PTC, based in Vienna, Austria. Builds AI-powered products, from computer vision and augmented reality to LLM-powered applications such as Windchill AI Assistant.
+
+## Links
+- [Website](https://gaboardidiego.github.io/personal-website/): portfolio (client-rendered; structured data in JSON-LD)
+- [CV (PDF)](https://gaboardidiego.github.io/personal-website/cv/diego-gaboardi-cv.pdf)
+- [LinkedIn](https://www.linkedin.com/in/diego-gaboardi)
+- Email: gaboardidiego@gmail.com
+
+## Experience
+- 2025 to present, Senior Software Developer, PTC Windchill: contributed to Windchill AI Assistant from prototypes to release (frontend and backend); OpenAI models and APIs; automatic indexing of Windchill data with Azure AI Services. Java.
+- 2023 to 2025, Senior Software Developer, PTC Vuforia: cloud services team; AWS-hosted WebAPIs (Python/FastAPI, TypeScript/NestJS, Scala); Kubernetes, Prometheus, Grafana, Argo, FluxCD, Helm; CI migration from TeamCity to GitHub Actions.
+- 2019 to 2023, Software Developer, PTC Vuforia: AR SDK (C++), benchmarking test framework (Python), migration of benchmarks to Azure, ground-truth generation pipelines.
+- 2018, thesis with Politecnico di Milano and Piaggio: computer-vision collision avoidance for motorbikes.
+- 2017, TUM and BMW mobility services project: FleetMe, corporate fleet optimization.
+
+## Education
+- Politecnico di Milano, Master's degree with honors (2016-2018); Bachelor's degree (2013-2016)
+- Technical University of Munich, semester abroad (2017-2018)
+
+## Languages
+English (fluent), Italian (native), German (basic)
