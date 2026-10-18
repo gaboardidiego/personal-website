@@ -31,7 +31,13 @@ export const experience: Experience[] = [
     period: '2025 — Present',
     current: true,
     description:
-      "I contributed significantly to Windchill AI Assistant, PTC's LLM-powered assistant that helps users find and understand product information through natural-language interactions. I worked on the product from its initial prototypes through release, on both the frontend and the backend.",
+      "I contributed significantly to Windchill AI Assistant, PTC's LLM-powered assistant that helps users find and understand product information through natural-language interactions.",
+    highlights: [
+      'Worked on the product from its initial prototypes through release, on both the frontend and the backend.',
+      'Helped turn an initial demo into a production-ready application.',
+      'Built features on top of OpenAI models and APIs.',
+      'Implemented the automatic indexing of Windchill data using Azure AI Services.',
+    ],
     skills: ['Java', 'Windchill', 'OpenAI', 'Azure AI Services'],
   },
   {
@@ -47,7 +53,7 @@ export const experience: Experience[] = [
       'Ported the CI from TeamCity to GitHub Actions and contributed to several other areas of our CI/CD pipeline.',
       'Continued to contribute to the benchmarking framework.',
     ],
-    skills: ['AWS', 'Azure', 'Kubernetes'],
+    skills: ['AWS', 'Azure', 'Kubernetes', 'Prometheus', 'Grafana'],
   },
   {
     role: 'Software Developer',
@@ -74,7 +80,13 @@ export const experience: Experience[] = [
     ],
     period: '2018',
     description:
-      'Design and implementation of a CV-based collision avoidance system for motorbikes. The most innovative contribution was the adaptation of the car-oriented algorithms on motorbikes and a novel approach to identifying stop-light regions and determining their status.',
+      'Design and implementation of a CV-based collision avoidance system for motorbikes.',
+    highlights: [
+      'Adapted car-oriented algorithms to motorbikes.',
+      'Developed a novel approach to identifying stop-light regions and determining their status.',
+      'Implemented a line detection algorithm using OpenCV.',
+      'Automatically benchmarked all pieces of the code on public datasets and on videos recorded for the project with motion sensors on the target motorbike.',
+    ],
     skills: ['Python', 'C++', 'OpenCV'],
   },
   {
